@@ -1,0 +1,44 @@
+<section
+  class="relative py-24 bg-linear-to-br
+         from-[#EEE9FF]
+         via-[#EEE9FF]
+         to-[#CFC7F5]"
+>
+  <div class="max-w-6xl mx-auto px-6">
+
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <h2 class="text-4xl font-semibold text-gray-900">Servicios</h2>
+      <p class="mt-4 text-gray-600">
+        Acompañamiento profesional adaptado a tus necesidades y ritmo de vida.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+      <card-information-service
+        title="Terapia Presencial"
+        description="Un espacio seguro, cálido y profesional en consultorio."
+        [features]="[
+          'Ambiente controlado y confidencial',
+          'Comunicación no verbal completa',
+          'Espacio físico de desconexión'
+        ]"
+        buttonText="Agendar Presencial"
+        icon="presencial"
+      />
+
+      <card-information-service
+        title="Terapia Online"
+        description="Atención desde cualquier lugar con la misma calidad profesional."
+        [features]="[
+          'Flexibilidad total de horario',
+          'Sin desplazamientos ni esperas',
+          'Desde la comodidad de tu hogar'
+        ]"
+        buttonText="Agendar Online"
+        icon="online"
+      />
+
+    </div>
+  </div>
+</section>
