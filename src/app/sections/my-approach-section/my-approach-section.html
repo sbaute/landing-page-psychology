@@ -28,25 +28,38 @@
   <!-- contenido -->
   <div class="relative hero-content flex-col lg:flex-row gap-16 z-10">
 
-    <!-- imagen -->
-    <div class="hover-3d shrink-0">
-      <figure
-        class="w-80 h-80 lg:w-96 lg:h-96
-               rounded-full overflow-hidden
-               border-2 border-white
-               shadow-xl"
-      >
-        <img
-          src="/images/profile.png"
-          alt="Perfil"
-          class="w-full h-full object-cover"
-        />
-      </figure>
+    <!-- imagen + identidad -->
+<div class="hover-3d shrink-0 flex flex-col items-center">
 
-      <!-- divs para efecto 3D -->
-      <div></div><div></div><div></div><div></div>
-      <div></div><div></div><div></div><div></div>
-    </div>
+  <figure
+    class="w-80 h-80 lg:w-96 lg:h-96
+           rounded-full overflow-hidden
+           border-2 border-white
+           shadow-xl"
+  >
+    <img
+      src="/images/profile.png"
+      alt="Perfil"
+      class="w-full h-full object-cover"
+    />
+  </figure>
+
+  <!-- Nombre -->
+  <div class="flex flex-col items-center gap-1 mt-5">
+    <p class="text-base font-medium text-gray-900">
+      Lic. Matias Bohe
+    </p>
+    <p class="text-sm text-gray-500">
+      Psicólogo
+    </p>
+  </div>
+
+  <!-- divs necesarios para el efecto 3D (si los usás) -->
+  <div></div><div></div><div></div><div></div>
+  <div></div><div></div><div></div><div></div>
+
+</div>
+
 
     <!-- texto -->
     <div class="flex flex-col text-center lg:text-left items-center lg:items-start max-w-xl text-black">

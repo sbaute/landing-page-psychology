@@ -3,12 +3,12 @@ import { HeaderPage } from "../components/header/header-page";
 import { HomeSection } from "../sections/home-section/home-section";
 import { ProfileSection } from "../sections/profile-section/profile-section";
 import { ActivatedRoute } from '@angular/router';
-import { MyApproachSection } from "../sections/ my-approach-section/ my-approach-section";
 import { ServiciosSection } from "../sections/servicios-section/servicios-section";
+import { MyApproachSection } from '../sections/my-approach-section/my-approach-section';
 
 @Component({
   selector: 'layout-page',
-  imports: [HeaderPage, HomeSection, ProfileSection, MyApproachSection, ServiciosSection],
+  imports: [HeaderPage, HomeSection, ProfileSection, ServiciosSection, MyApproachSection],
   templateUrl: './layout-page.html',
 })
 export class LayoutPage implements AfterViewInit {

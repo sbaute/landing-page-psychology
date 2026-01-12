@@ -3,7 +3,7 @@ import { RouterLinkActive, RouterLink } from "@angular/router";
 
 @Component({
   selector: 'header-page',
-  imports: [RouterLinkActive, RouterLink],
+  imports: [RouterLink],
   templateUrl: './header-page.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
