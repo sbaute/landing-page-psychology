@@ -2,9 +2,11 @@
 @plugin "daisyui" {
   themes: cupcake;
 }
+
 html {
   scroll-behavior: smooth;
 }
+
 section {
   scroll-margin-top: 90px;
 }
@@ -25,4 +27,28 @@ section {
   animation: gradientMoveStrong 10s ease-in-out infinite;
 }
 
+@layer components {
+  .section {
+    @apply w-full py-24;
+  }
 
+  .section-hero {
+    @apply py-36;
+  }
+
+  .section-container {
+    @apply max-w-[1100px] mx-auto px-6;
+  }
+
+  .section-neutral {
+    @apply bg-white;
+  }
+
+  .section-soft {
+    @apply bg-[#f7f7fb];
+  }
+
+  .section-primary {
+    @apply bg-gradient-to-br from-[#6f63ff] to-[#9b8cff] text-white;
+  }
+}

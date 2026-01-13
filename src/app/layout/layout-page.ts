@@ -5,10 +5,11 @@ import { ProfileSection } from "../sections/profile-section/profile-section";
 import { ActivatedRoute } from '@angular/router';
 import { ServiciosSection } from "../sections/servicios-section/servicios-section";
 import { MyApproachSection } from '../sections/my-approach-section/my-approach-section';
+import { ContactSection } from "../sections/contact-section/contact-section";
 
 @Component({
   selector: 'layout-page',
-  imports: [HeaderPage, HomeSection, ProfileSection, ServiciosSection, MyApproachSection],
+  imports: [HomeSection, ProfileSection, ServiciosSection, MyApproachSection, ContactSection],
   templateUrl: './layout-page.html',
 })
 export class LayoutPage implements AfterViewInit {

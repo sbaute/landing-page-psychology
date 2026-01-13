@@ -1,0 +1,158 @@
+<section class="section section-soft">
+  <div class="section-container">
+
+    <!-- HEADER -->
+    <div class="text-center mx-auto mb-14">
+      <h2 class="text-4xl lg:text-5xl font-semibold text-gray-900">
+        Contacto
+        <span class="text-violet-600 block lg:inline">
+          · Reserva tu sesión
+        </span>
+      </h2>
+
+      <!-- <p class=" text-gray-500 mt-4 text-lg">
+        Toda comunicación es estrictamente
+        confidencial y profesional. <br />
+        Tu espacio seguro comienza aquí.
+
+      </p> -->
+    </div>
+
+    <!-- CONTENT -->
+    <div class="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-12">
+
+      <!-- FORM -->
+      <form
+        [formGroup]="form"
+        (ngSubmit)="enviar()"
+        class="bg-white rounded-2xl shadow-xl
+               p-6 lg:p-10"
+      >
+        <div class="max-w-xl mx-auto space-y-6">
+
+          <!-- NOMBRE -->
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">
+              Nombre y apellido
+            </label>
+            <input
+              type="text"
+              formControlName="nombre"
+              placeholder="Ej. Ana García"
+              class="w-full rounded-lg border border-gray-300 px-4 py-2
+                     placeholder-gray-400 placeholder-opacity-70
+                     focus:outline-none focus:border-violet-500
+                     focus:ring-1 focus:ring-violet-400"
+            />
+          </div>
+
+          <!-- MENSAJE -->
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">
+              Mensaje
+            </label>
+            <textarea
+              rows="4"
+              formControlName="mensaje"
+              placeholder="Cuéntame brevemente en qué puedo ayudarte..."
+              class="w-full rounded-lg border border-gray-300 px-4 py-2
+                     placeholder-gray-400 placeholder-opacity-70
+                     focus:outline-none focus:border-violet-500
+                     focus:ring-1 focus:ring-violet-400
+                     resize-none"
+            ></textarea>
+          </div>
+
+          <!-- BOTÓN -->
+          <button
+            type="submit"
+            [disabled]="form.invalid"
+            class="w-full bg-violet-600 text-white py-3 rounded-lg
+                   font-semibold shadow-md
+                   hover:bg-violet-700 hover:shadow-lg transition
+                   disabled:opacity-50"
+          >
+            ➤ Enviar mensaje
+          </button>
+
+          <!-- TEXTO -->
+          <p class="text-xs text-gray-400 text-center">
+           Toda comunicación es estrictamente
+        confidencial y profesional. <br />
+        Tu espacio seguro comienza aquí.
+          </p>
+
+        </div>
+      </form>
+
+      <!-- INFO -->
+      <div class="space-y-6">
+
+        <!-- CARD INSTAGRAM -->
+        <div
+          class="bg-white rounded-2xl shadow-lg p-6
+                 border border-violet-100"
+        >
+          <div class="flex items-center gap-4">
+            <img
+              src="/images/profile.png"
+              alt="Instagram"
+              class="w-14 h-14 rounded-full object-cover"
+            />
+            <div>
+              <p class="font-semibold text-gray-900">
+                Matías Bohé
+              </p>
+              <a
+                href="https://www.instagram.com/psi.matiasbohe/"
+                target="_blank"
+                class="text-sm text-violet-600 hover:underline"
+              >
+                @psi.matiasbohe
+              </a>
+            </div>
+          </div>
+
+          <p class="text-sm text-gray-500 mt-3">
+            Psicólogo · Atención presencial y online · Espacio seguro
+          </p>
+
+          <a
+            href="https://www.instagram.com/psi.matiasbohe/"
+            target="_blank"
+            class="inline-block mt-4 text-sm font-semibold text-violet-600 hover:underline"
+          >
+            Ver perfil en Instagram →
+          </a>
+        </div>
+
+        <!-- CARD UBICACIÓN -->
+        <div
+          class="bg-white rounded-2xl shadow-lg p-6
+                 border border-violet-100"
+        >
+          <h3 class="font-semibold text-gray-900 text-sm mb-3">
+            Ubicación
+          </h3>
+
+          <div class="w-full h-40 rounded-xl overflow-hidden border border-gray-200">
+            <iframe
+              class="w-full h-full"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps?q=Zona+Centro+Rosario+Santa+Fe+Argentina&output=embed"
+            ></iframe>
+          </div>
+
+          <p class="text-xs text-gray-500 mt-3">
+            📍 Zona Centro<br />
+            Atención presencial y online
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>

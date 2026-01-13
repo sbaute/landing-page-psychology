@@ -1,7 +1,7 @@
 <section
   class="relative min-h-screen w-full overflow-hidden
          bg-[linear-gradient(120deg,#4F4699,#6E63B6,#9B8EDB,#6E63B6)]
-         bg-[length:400%_400%]
+         bg-length:400%_400%
          animate-gradient-strong"
 >
 
@@ -24,7 +24,7 @@
            pointer-events-none"
   ></div>
 
-  <!-- 🔽 TRANSICIÓN HACIA LA SIGUIENTE SECCIÓN -->
+  <!-- transición -->
   <div
     class="absolute bottom-0 inset-x-0 h-48
            bg-linear-to-b
@@ -32,57 +32,58 @@
            to-[#8C82CF]"
   ></div>
 
+  <!-- contenido -->
+  <div class="relative z-10 flex min-h-screen flex-col items-center justify-center px-6 text-center">
 
- <div class="relative z-10 flex min-h-screen flex-col items-center justify-center px-6 text-center">
+    <h1 class="text-white max-w-4xl">
+      <span class="block text-4xl md:text-5xl mb-4 font-medium opacity-90">
+        ¿Estás pensando en empezar
+      </span>
 
-  <h1 class="text-white max-w-4xl">
-    <span class="block text-4xl mb-4 font-medium">
-      ¿Estás pensando en empezar
-    </span>
-    <span class="block text-7xl font-bold">
-      terapia?
-    </span>
-  </h1>
+      <span class="block text-6xl md:text-7xl font-bold tracking-tight">
+        terapia?
+      </span>
+    </h1>
 
-  <!-- BOTÓN -->
+    <!-- subtítulo emocional -->
+    <!-- <p class="mt-6 max-w-xl text-lg md:text-xl text-white/90 leading-relaxed">
+      Un espacio seguro para escucharte, entender lo que te pasa
+      y acompañarte en tu proceso.
+    </p> -->
 
- <a
-   routerLink="/"
-   fragment="mi-enfoque"
-  class="inline-flex mt-10 px-6 py-3 rounded-xl
-         bg-violet-400 text-white font-semibold
-         shadow-md
-         items-center gap-2
-         transition-all duration-300 ease-out
-         hover:bg-violet-500
-         hover:shadow-xl
-         hover:-translate-y-1
-         active:scale-95
-         group"
->
-  <span>Más información</span>
+    <!-- CTA -->
+    <a
+      routerLink="/"
+      fragment="sobre-mi"
+      class="inline-flex mt-10 px-8 py-4 rounded-xl
+             bg-violet-400 text-white font-semibold text-lg
+             shadow-lg
+             items-center gap-3
+             transition-all duration-300 ease-out
+             hover:bg-violet-500
+             hover:shadow-2xl
+             hover:-translate-y-1
+             active:scale-95
+             focus-visible:outline-none
+             focus-visible:ring-2 focus-visible:ring-white/50
+             group"
+    >
+      <span>Conocé cómo puedo ayudarte</span>
 
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    class="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    stroke-width="1.5"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-  >
-    <path d="m18 8l4 4m0 0l-4 4m4-4H2" />
-  </svg>
-</a>
-</div>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="m18 8l4 4m0 0l-4 4m4-4H2" />
+      </svg>
+    </a>
 
-<!-- transición hacia la siguiente sección -->
-<div
-  class="absolute bottom-0 inset-x-0 h-40
-         bg-linear-to-b
-         from-transparent
-         to-[#8C82CF]"
-></div>
+  </div>
 
 </section>
