@@ -2,21 +2,18 @@
   <div class="section-container">
 
     <!-- HEADER -->
-    <div class="text-center mx-auto mb-14">
-      <h2 class="text-4xl lg:text-5xl font-semibold text-gray-900">
+    <header class="section-header">
+      <h2 class="section-title">
         Contacto
-        <span class="text-violet-600 block lg:inline">
+        <span class="text-violet-700">
           · Reserva tu sesión
         </span>
       </h2>
 
-      <!-- <p class=" text-gray-500 mt-4 text-lg">
-        Toda comunicación es estrictamente
-        confidencial y profesional. <br />
-        Tu espacio seguro comienza aquí.
-
-      </p> -->
-    </div>
+      <p class="section-subtitle">
+        Acompañamiento profesional adaptado a tus necesidades y ritmo de vida.
+      </p>
+    </header>
 
     <!-- CONTENT -->
     <div class="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-12">
@@ -25,40 +22,54 @@
       <form
         [formGroup]="form"
         (ngSubmit)="enviar()"
-        class="bg-white rounded-2xl shadow-xl
-               p-6 lg:p-10"
+        class="bg-white rounded-3xl shadow-xl
+               p-6 md:p-10 lg:p-12"
       >
-        <div class="max-w-xl mx-auto space-y-6">
+        <div class="space-y-6 md:space-y-8">
 
           <!-- NOMBRE -->
           <div>
-            <label class="block text-sm font-medium text-gray-700 mb-1">
+            <label
+              class="block text-sm md:text-base font-medium text-gray-700
+                     mb-1 md:mb-2"
+            >
               Nombre y apellido
             </label>
+
             <input
               type="text"
               formControlName="nombre"
               placeholder="Ej. Ana García"
-              class="w-full rounded-lg border border-gray-300 px-4 py-2
+              class="w-full rounded-xl border border-gray-300
+                     px-4 md:px-5
+                     py-2.5 md:py-3
+                     text-sm md:text-base
                      placeholder-gray-400 placeholder-opacity-70
                      focus:outline-none focus:border-violet-500
-                     focus:ring-1 focus:ring-violet-400"
+                     focus:ring-2 focus:ring-violet-400"
             />
           </div>
 
           <!-- MENSAJE -->
           <div>
-            <label class="block text-sm font-medium text-gray-700 mb-1">
+            <label
+              class="block text-sm md:text-base font-medium text-gray-700
+                     mb-1 md:mb-2"
+            >
               Mensaje
             </label>
+
             <textarea
               rows="4"
               formControlName="mensaje"
               placeholder="Cuéntame brevemente en qué puedo ayudarte..."
-              class="w-full rounded-lg border border-gray-300 px-4 py-2
+              class="w-full rounded-xl border border-gray-300
+                     px-4 md:px-5
+                     py-2.5 md:py-3
+                     text-sm md:text-base
                      placeholder-gray-400 placeholder-opacity-70
                      focus:outline-none focus:border-violet-500
-                     focus:ring-1 focus:ring-violet-400
+                     focus:ring-2 focus:ring-violet-400
                      resize-none"
             ></textarea>
           </div>
@@ -67,26 +78,31 @@
           <button
             type="submit"
             [disabled]="form.invalid"
-            class="w-full bg-violet-600 text-white py-3 rounded-lg
-                   font-semibold shadow-md
-                   hover:bg-violet-700 hover:shadow-lg transition
+            class="w-full bg-violet-500 text-white
+                   py-3 md:py-4
+                   rounded-xl
+                   text-sm md:text-base
+                   font-semibold shadow-lg
+                   hover:bg-violet-600 hover:shadow-xl transition
                    disabled:opacity-50"
           >
             ➤ Enviar mensaje
           </button>
 
           <!-- TEXTO -->
-          <p class="text-xs text-gray-400 text-center">
-           Toda comunicación es estrictamente
-        confidencial y profesional. <br />
-        Tu espacio seguro comienza aquí.
+          <p
+            class="text-xs md:text-sm text-gray-500
+                   text-center leading-relaxed"
+          >
+            Toda comunicación es estrictamente confidencial y profesional. <br />
+            Tu espacio seguro comienza aquí.
           </p>
 
         </div>
       </form>
 
       <!-- INFO -->
-      <div class="space-y-6">
+      <div class="flex flex-col space-y-6">
 
         <!-- CARD INSTAGRAM -->
         <div
@@ -120,7 +136,8 @@
           <a
             href="https://www.instagram.com/psi.matiasbohe/"
             target="_blank"
-            class="inline-block mt-4 text-sm font-semibold text-violet-600 hover:underline"
+            class="inline-block mt-4 text-sm font-semibold
+                   text-violet-600 hover:underline"
           >
             Ver perfil en Instagram →
           </a>
@@ -131,11 +148,14 @@
           class="bg-white rounded-2xl shadow-lg p-6
                  border border-violet-100"
         >
-          <h3 class="font-semibold text-gray-900 text-sm mb-3">
+          <h3 class="font-semibold text-gray-900 text-sm md:text-base mb-3">
             Ubicación
           </h3>
 
-          <div class="w-full h-40 rounded-xl overflow-hidden border border-gray-200">
+          <div
+            class="w-full h-48 md:h-56 rounded-xl
+                   overflow-hidden border border-gray-200"
+          >
             <iframe
               class="w-full h-full"
               loading="lazy"
@@ -144,7 +164,7 @@
             ></iframe>
           </div>
 
-          <p class="text-xs text-gray-500 mt-3">
+          <p class="text-xs md:text-sm text-gray-500 mt-4 leading-relaxed">
             📍 Zona Centro<br />
             Atención presencial y online
           </p>

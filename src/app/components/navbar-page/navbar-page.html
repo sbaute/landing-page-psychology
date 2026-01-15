@@ -1,0 +1,36 @@
+<nav>
+  <ul
+    class="
+      menu menu-horizontal items-center gap-1
+      text-sm sm:text-base
+    "
+  >
+    <li>
+      <a routerLink="/" fragment="inicio" class="nav-link" [class.nav-active]="activeSection() === 'inicio'">
+        Inicio
+      </a>
+    </li>
+
+    <li>
+      <a routerLink="/" fragment="sobre-mi" class="nav-link">
+        Sobre mí
+      </a>
+    </li>
+
+    <li>
+      <a routerLink="/" fragment="servicios" class="nav-link">
+        Servicios
+      </a>
+    </li>
+
+    <li>
+      <a
+        routerLink="/"
+        fragment="contacto"
+        class="nav-link nav-link-bordered"
+      >
+        Contacto
+      </a>
+    </li>
+  </ul>
+</nav>

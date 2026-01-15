@@ -1,4 +1,5 @@
 @import "tailwindcss";
+
 @plugin "daisyui" {
   themes: cupcake;
 }
@@ -27,28 +28,406 @@ section {
   animation: gradientMoveStrong 10s ease-in-out infinite;
 }
 
+@layer base {
+  .font-dancing {
+    font-family: 'Dancing Script', cursive;
+  }
+
+  .font-inter {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  .font-sora {
+    font-family: 'Sora', system-ui, sans-serif;
+  }
+}
+
+/* estilos para las section and container */
 @layer components {
-  .section {
-    @apply w-full py-24;
+    .section {
+    @apply
+      w-full
+      py-8      /* mobile */
+      md:py-10     /* tablet */
+      lg:py-10;    /* desktop */
   }
 
   .section-hero {
     @apply py-36;
   }
 
-  .section-container {
-    @apply max-w-[1100px] mx-auto px-6;
-  }
+.section-container {
+  @apply max-w-[1366px] mx-auto px-4 md:px-6 lg:px-8;
+}
+
 
   .section-neutral {
     @apply bg-white;
   }
 
-  .section-soft {
-    @apply bg-[#f7f7fb];
-  }
-
   .section-primary {
     @apply bg-gradient-to-br from-[#6f63ff] to-[#9b8cff] text-white;
   }
+
+.section-header {
+  @apply text-center mb-8 sm:mb-10 md:mb-12;
+}
+
+.section-title {
+  font-family: 'Sora', system-ui, sans-serif;
+  @apply
+    text-2xl
+    sm:text-3xl
+    md:text-5xl
+    lg:text-6xl
+    font-bold
+    tracking-tight
+    text-gray-900
+    drop-shadow-sm;
+}
+
+.section-subtitle {
+  font-family: 'Sora', system-ui, sans-serif;
+  @apply
+    mt-2
+    sm:mt-3
+    text-xs
+    sm:text-lg
+    md:text-xl
+    font-semibold
+    text-violet-500;
+}
+
+.button-home {
+  @apply
+    inline-flex
+    items-center
+    gap-2
+    px-4
+    py-2
+    mt-2
+    rounded-xl
+    bg-violet-500
+    text-white
+    font-semibold
+    text-xs
+    shadow-lg
+    transition-all
+    duration-300
+    ease-out
+    hover:bg-violet-600
+    hover:shadow-2xl
+    hover:-translate-y-1
+    active:scale-95
+    focus-visible:outline-none
+    focus-visible:ring-2
+    focus-visible:ring-white/50
+
+    md:px-8
+    md:py-4
+    md:text-lg
+    md:gap-3
+    md:mt-12
+    md:-translate-x-3;
+}
+
+.button-service {
+  @apply
+    inline-flex
+    mt-12
+    px-12
+    md:px-20
+    py-3
+    md:py-4
+    rounded-full
+    bg-violet-500
+    text-white
+    font-semibold
+    text-base
+    md:text-lg
+    shadow-lg
+    items-center
+    gap-3
+    transition-all
+    duration-300
+    ease-out
+    hover:bg-violet-600
+    hover:shadow-2xl
+    hover:-translate-y-1
+    active:scale-95
+    focus-visible:outline-none
+    focus-visible:ring-2
+    focus-visible:ring-white/50
+    md:-translate-x-3;
+}
+
+
+
+.box-profile-text {
+  font-family: 'Inter', system-ui, sans-serif;
+
+ @apply
+    w-full
+    text-center
+    text-gray-600
+    text-sm
+    leading-relaxed
+
+    md:text-xl;
+}
+
+.mini-box {
+  font-family: 'Inter', system-ui, sans-serif;
+
+  @apply
+    bg-white
+    rounded-2xl
+    p-6
+    md:p-7
+    lg:p-8
+    text-center
+    border-2
+    border-violet-200
+    min-h-[180px]
+    flex
+    flex-col
+    justify-center
+    transition-all
+    duration-300
+    ease-out
+    hover:-translate-y-1
+    hover:shadow-xl;
+}
+
+  .mini-box-title {
+    @apply
+      mt-4
+      text-sm
+      md:text-lg
+      font-semibold
+      text-gray-900;
+  }
+
+  .mini-box-text {
+    @apply
+      mt-2
+      text-xs
+      md:text-sm
+      text-gray-600
+      leading-relaxed;
+  }
+
+  .icon-primary {
+    @apply w-12 h-12 stroke-violet-600;
+ }
+
+  /* .nav-link {
+    @apply
+      px-5
+      py-2.5
+      rounded-full
+      text-base
+      md:text-lg
+      font-medium
+      text-gray-700
+      transition-colors
+      duration-200
+      hover:bg-[#6E63B6]/70
+      hover:text-white
+      focus:outline-none
+      focus:bg-[#6E63B6]/70
+      focus:text-white
+      active:bg-[#6E63B6]
+      active:text-white;
+  }
+
+  .nav-link-bordered {
+    @apply
+      border-2
+      border-violet-500
+      text-violet-600
+      transition-colors
+      duration-200
+      hover:bg-violet-600
+      hover:text-white
+      focus:bg-violet-600
+      focus:text-white
+      active:bg-violet-700
+      active:text-white;
+  } */
+
+.nav-link {
+  @apply
+    px-5
+    py-2.5
+    rounded-full
+    text-sm
+    sm:text-base
+    md:text-lg
+    font-medium
+    text-gray-700
+    transition-colors
+    duration-200
+    hover:bg-[#6E63B6]/70
+    hover:text-white
+    focus:outline-none
+    focus:bg-[#6E63B6]/70
+    focus:text-white
+    active:bg-[#6E63B6]
+    active:text-white;
+}
+
+
+.nav-link:hover {
+  color: #6E63B6;
+}
+
+
+}
+
+/* Menu Hamburguesa animacion */
+@keyframes slideDownSoft {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-slide-down {
+  animation: slideDownSoft 260ms ease-out;
+}
+
+
+
+/* =====================
+   GRADIENTE ULTRA
+===================== */
+@keyframes gradientUltra {
+  0% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 50% 0%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  75% {
+    background-position: 50% 100%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient-ultra {
+  animation: gradientUltra 4.5s linear infinite;
+  background-size: 500% 500%;
+}
+
+/* =====================
+   BLOBS FUERTES
+===================== */
+@keyframes blobStrong {
+  0% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+  }
+  25% {
+    transform: translate(120px, -80px) scale(1.15) rotate(15deg);
+  }
+  50% {
+    transform: translate(-100px, 100px) scale(0.95) rotate(-15deg);
+  }
+  75% {
+    transform: translate(80px, 60px) scale(1.1) rotate(10deg);
+  }
+  100% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+  }
+}
+
+.animate-blob-strong {
+  animation: blobStrong 16s ease-in-out infinite;
+}
+
+.animate-blob-strong-reverse {
+  animation: blobStrong 20s ease-in-out infinite reverse;
+}
+
+.animate-blob-strong-slow {
+  animation: blobStrong 26s ease-in-out infinite;
+}
+
+/* =====================
+   NOISE MÁS VIVO
+===================== */
+@keyframes noiseStrong {
+  0% { transform: translate(0, 0); }
+  20% { transform: translate(-4%, 3%); }
+  40% { transform: translate(3%, -4%); }
+  60% { transform: translate(-3%, -2%); }
+  80% { transform: translate(2%, 3%); }
+  100% { transform: translate(0, 0); }
+}
+
+.animate-noise-strong {
+  animation: noiseStrong 4s steps(8) infinite;
+}
+
+
+
+/* =====================
+   CAÍDA SUAVE LETRAS HOME
+===================== */
+@keyframes dropIn {
+  from {
+    opacity: 0;
+    transform: translateY(-48px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-drop {
+  opacity: 0;
+  animation: dropIn 1.3s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+/* =====================
+   SUBRAYADO FINAL
+===================== */
+@keyframes underline {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.animate-underline {
+  width: 0;
+  animation: underline 0.6s ease-out forwards;
+}
+
+/* =====================
+   DELAYS
+===================== */
+.delay-100  { animation-delay: 0.1s; }
+.delay-200  { animation-delay: 0.2s; }
+.delay-300  { animation-delay: 0.3s; }
+.delay-400  { animation-delay: 0.4s; }
+.delay-600  { animation-delay: 0.6s; }
+.delay-1200 { animation-delay: 1.2s; }
+
+
+.soft {
+  font-family: 'Sora', sans-serif;
+  letter-spacing: -0.01em;
 }

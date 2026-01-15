@@ -1,12 +1,12 @@
-<section class="section section-soft py-20 lg:py-24">
+<section class="section section-soft">
   <div class="section-container">
 
     <!-- TÍTULO -->
-    <header class="text-center mb-16">
-      <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-gray-900">
+    <header class="section-header">
+      <h2 class="section-title">
         Acompañamiento terapéutico
       </h2>
-      <p class="mt-3 text-purple-500 font-medium text-base">
+      <p class="section-subtitle">
         Enfoque integrativo, respetuoso y personalizado
       </p>
     </header>
@@ -15,24 +15,43 @@
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
 
       <!-- PERFIL -->
-      <div class="bg-white rounded-3xl border border-gray-100 shadow-sm p-6 text-center">
+      <div class="bg-gray-50 rounded-3xl border border-gray-100 shadow-sm p-6 text-center">
         <div class="relative">
-          <img
-            src="/images/profile.png"
-            alt="Psi. Matías Bohé"
-            class="rounded-2xl w-full object-cover border border-gray-100"
-          />
-
-          <span
-            class="absolute -bottom-3 left-1/2 -translate-x-1/2
-                   bg-purple-600 text-white text-xs font-medium
-                   px-4 py-1 rounded-full shadow-sm"
+        <img
+          src="/images/profile.png"
+          alt="Psi. Matías Bohé"
+          class="
+            w-full
+            h-72
+            sm:h-80
+            lg:h-96
+            object-cover
+            rounded-2xl
+            border border-gray-100
+          "
+        />
+         <span
+          class="absolute -bottom-3 left-1/2 -translate-x-1/2
+                bg-white text-purple-600 text-sm font-medium
+                px-2 py-1 rounded-full shadow-sm
+                border border-violet-600
+                flex items-center gap-2"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1024 1024"
+            class="w-4 h-4"
+            fill="currentColor"
           >
-            🎓 Psicólogo UNR
-          </span>
+            <path d="M990.848 696.304V438.16l16.096-8.496c10.464-5.44 17.055-16.225 17.183-28.032c.128-11.777-6.256-22.689-16.592-28.368l-481.44-257.6c-9.631-5.28-21.28-5.249-30.976.095l-478.8 257.92C6.126 379.36-.177 390.143-.113 401.84s6.496 22.4 16.817 27.97l210.384 111.983c-2.64 4.656-4.272 9.968-4.272 15.696v270.784a32.03 32.03 0 0 0 10.72 23.904c6.945 6.16 73.441 60.096 276.753 60.096c202.592 0 270.88-50.976 278-56.784c7.44-6.064 11.744-15.152 11.744-24.784V552.976c0-4.496-.944-8.768-2.608-12.64l129.424-68.369V696.48c-18.976 11.104-31.84 31.472-31.84 55.024c0 35.344 28.656 64 64 64s64-28.656 64-64c0-23.697-13.04-44.145-32.16-55.2zM736.031 812.368c-25.152 12.096-91.712 35.904-225.744 35.904c-134.88 0-199.936-25.344-223.472-37.536V573.6l207.808 110.624a31.9 31.9 0 0 0 15.184 3.84a31.7 31.7 0 0 0 14.816-3.664l211.408-111.664zM510.063 619.81l-411.6-218.561l412.32-220.976l413.6 220.336z"/>
+          </svg>
+
+          Psicólogo UNR
+        </span>
+
         </div>
 
-        <h3 class="mt-8 text-lg font-bold text-gray-900">
+        <h3 class="mt-8 text-2xl font-bold text-gray-900">
           Psi. Matías Bohé
         </h3>
 
@@ -42,13 +61,11 @@
       </div>
 
       <!-- TEXTO -->
-      <div class="lg:col-span-2 bg-white rounded-3xl border border-gray-100 shadow-sm p-8 lg:p-10 flex flex-col gap-10">
-
-
+      <div class="lg:col-span-2 bg-gray-50 rounded-3xl border border-gray-100 shadow-sm p-8 lg:p-10 flex flex-col gap-6">
 
         <!-- TEXTO PRINCIPAL -->
         <div class="flex justify-center">
-          <p class="text-gray-600 font-base leading-relaxed text-center max-w-xl">
+          <p class="box-profile-text">
             Soy psicólogo, egresado de la Facultad de Psicología de la
             Universidad Nacional de Rosario. Concibo la salud mental como una construcción social y el espacio terapéutico como un lugar de escucha y respeto, orientado a acompañar procesos singulares con compromiso ético y cuidado.
           </p>
@@ -62,9 +79,7 @@
 
             <!-- first card -->
           <div
-            class="group bg-gray-50 rounded-2xl p-6 text-center
-                  transition-all duration-300 ease-out
-                  hover:-translate-y-1 hover:shadow-lg"
+            class="mini-box"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -80,19 +95,17 @@
               />
             </svg>
 
-            <h4 class="mt-4 font-semibold text-gray-900">
+            <h4 class="mini-box-title">
               Mi enfoque
             </h4>
-            <p class="text-sm text-gray-600 mt-1 leading-relaxed">
+            <p class="mini-box-text">
               Integrativo, flexible y adaptado a cada proceso.
             </p>
           </div>
 
           <!-- second card -->
           <div
-            class="group bg-gray-50 rounded-2xl p-6 text-center
-                  transition-all duration-300 ease-out
-                  hover:-translate-y-1 hover:shadow-lg"
+            class="mini-box"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -112,19 +125,17 @@
               </g>
             </svg>
 
-            <h4 class="mt-4 font-semibold text-gray-900">
+            <h4 class="mini-box-title">
               Espacio terapéutico
             </h4>
-            <p class="text-sm text-gray-600 mt-1 leading-relaxed">
+            <p class="mini-box-text">
               Escucha, respeto y construcción conjunta.
             </p>
           </div>
 
           <!-- tercer card -->
           <div
-                  class="group bg-gray-50 rounded-2xl p-6 text-center
-                        transition-all duration-300 ease-out
-                        hover:-translate-y-1 hover:shadow-lg"
+                  class="mini-box"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -140,10 +151,10 @@
                     />
                   </svg>
 
-                  <h4 class="mt-4 font-semibold text-gray-900">
+                  <h4 class="mini-box-title">
                     Cada proceso es único
                   </h4>
-                  <p class="text-sm text-gray-600 mt-1 leading-relaxed">
+                  <p class="mini-box-text">
                     Se respetan tiempos, historias y decisiones.
                   </p>
           </div>
