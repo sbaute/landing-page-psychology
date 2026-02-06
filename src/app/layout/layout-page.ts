@@ -10,7 +10,7 @@ import { FooterPage } from '../components/footer/footer-page';
 
 @Component({
   selector: 'layout-page',
-  imports: [HomeSection, ProfileSection, ServiciosSection, MyApproachSection, ContactSection, FooterPage],
+  imports: [HomeSection, ProfileSection, ServiciosSection, ContactSection],
   templateUrl: './layout-page.html',
 })
 export class LayoutPage implements AfterViewInit {
