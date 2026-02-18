@@ -5,11 +5,12 @@ import {
   ReactiveFormsModule,
   FormGroup
 } from '@angular/forms';
+import { TittleSection } from "../../components/tittle-header/tittle-section";
 
 @Component({
   selector: 'contact-section',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, TittleSection],
   templateUrl: './contact-section.html',
 })
 export class ContactSection {

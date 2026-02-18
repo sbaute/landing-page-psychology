@@ -1,29 +1,22 @@
 <section class="section section-soft">
   <div class="section-container">
 
-    <!-- HEADER -->
-    <header class="section-header">
-      <h2 class="section-title">
-        Contacto
-        <span class="text-violet-700">
-          · Reserva tu sesión
-        </span>
-      </h2>
 
-      <p class="section-subtitle">
-        Acompañamiento profesional adaptado a tus necesidades y ritmo de vida.
-      </p>
+    <!-- TÍTULO -->
+    <header class="section-header">
+      <tittle-section text="Contacto" />
+
     </header>
 
     <!-- CONTENT -->
-    <div class="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-12">
+    <div class="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-12 ">
 
       <!-- FORM -->
       <form
         [formGroup]="form"
         (ngSubmit)="enviar()"
-        class="bg-white rounded-3xl shadow-xl
-               p-6 md:p-10 lg:p-12"
+        class="rounded-[18px] border border-white/25 bg-white/20 backdrop-blur-[10px] p-4 shadow-[0_12px_30px_rgba(20,30,80,0.10)]
+                p-6 md:p-10 lg:p-12"
       >
         <div class="space-y-6 md:space-y-8">
 
@@ -40,7 +33,7 @@
               type="text"
               formControlName="nombre"
               placeholder="Ej. Ana García"
-              class="w-full rounded-xl border border-gray-300
+              class="w-full rounded-xl border border-violet-300
                      px-4 md:px-5
                      py-2.5 md:py-3
                      text-sm md:text-base
@@ -63,7 +56,7 @@
               rows="4"
               formControlName="mensaje"
               placeholder="Cuéntame brevemente en qué puedo ayudarte..."
-              class="w-full rounded-xl border border-gray-300
+              class="w-full rounded-xl border border-violet-300
                      px-4 md:px-5
                      py-2.5 md:py-3
                      text-sm md:text-base
@@ -106,8 +99,10 @@
 
         <!-- CARD INSTAGRAM -->
         <div
-          class="bg-white rounded-2xl shadow-lg p-6
-                 border border-violet-100"
+          class="
+                rounded-[18px] border border-white/25 bg-white/20 backdrop-blur-[10px] p-4 shadow-[0_12px_30px_rgba(20,30,80,0.10)]
+                p-6
+                border border-white-100"
         >
           <div class="flex items-center gap-4">
             <img
@@ -129,7 +124,7 @@
             </div>
           </div>
 
-          <p class="text-sm text-gray-500 mt-3">
+          <p class="text-sm text-gray-600 mt-3">
             Psicólogo · Atención presencial y online · Espacio seguro
           </p>
 
@@ -145,8 +140,8 @@
 
         <!-- CARD UBICACIÓN -->
         <div
-          class="bg-white rounded-2xl shadow-lg p-6
-                 border border-violet-100"
+          class="rounded-[18px] border border-white/25 bg-white/30 backdrop-blur-[10px] p-4 shadow-[0_12px_30px_rgba(20,30,80,0.10)] p-6
+           border border-white-100"
         >
           <h3 class="font-semibold text-gray-900 text-sm md:text-base mb-3">
             Ubicación
@@ -164,7 +159,7 @@
             ></iframe>
           </div>
 
-          <p class="text-xs md:text-sm text-gray-500 mt-4 leading-relaxed">
+          <p class="text-xs md:text-sm text-gray-600 mt-4 leading-relaxed">
             📍 Zona Centro<br />
             Atención presencial y online
           </p>
