@@ -1,15 +1,15 @@
 import { Component, input } from '@angular/core';
+import { CheckItem } from "../CheckItem/checkItem";
 
 @Component({
   selector: 'card-information-service',
-  imports: [],
+  imports: [CheckItem],
   templateUrl: './card-information-service.html',
 })
 export class CardInformationService {
 
-   title = input.required<string>();
-  description = input.required<string>();
-  features = input.required<string[]>();
-  icon = input.required<'presencial' | 'online'>();
+  title = input<string>();
+  image = input<string>();
+  items = input<string[]>();
 
  }

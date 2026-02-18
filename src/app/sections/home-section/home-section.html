@@ -1,156 +1,116 @@
 <section
-  class="mb-5 relative min-h-screen w-full overflow-hidden
-         bg-[linear-gradient(120deg,#4F4699,#6E63B6,#9B8EDB,#6E63B6)]
-         bg-[length:500%_500%]
-         animate-gradient-ultra"
+  class="relative min-h-screen bg-cover bg-bottom bg-no-repeat"
+  style="background-image: url('/images/fondo-animacion.jpg.jpeg');"
 >
 
-  <!-- BLOB 1 -->
-  <div
-    class="absolute -top-60 -left-60 w-[700px] h-[700px]
-           bg-white/25 rounded-full blur-[140px]
-           animate-blob-strong"
-  ></div>
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-white/40"></div>
 
-  <!-- BLOB 2 -->
-  <div
-    class="absolute top-1/4 -right-60 w-[800px] h-[800px]
-           bg-white/15 rounded-full blur-[160px]
-           animate-blob-strong-reverse"
-  ></div>
-
-  <!-- BLOB 3 -->
-  <div
-    class="absolute bottom-[-20%] left-1/3 w-[600px] h-[600px]
-           bg-violet-300/20 rounded-full blur-[120px]
-           animate-blob-strong-slow"
-  ></div>
-
-  <!-- TEXTURA -->
-  <div
-    class="absolute inset-0
-           bg-[url('/images/noise.png')]
-           opacity-[0.05]
-           pointer-events-none
-           animate-noise-strong"
-  ></div>
-
-  <!-- OVERLAY DE CONTRASTE -->
-  <div
-    class="absolute inset-0 bg-black/25 backdrop-blur-[2px]"
-  ></div>
-
-  <!-- TRANSICIÓN -->
-  <div
-    class="absolute bottom-0 inset-x-0 h-56
-           bg-linear-to-b
-           from-transparent
-           to-[#8C82CF]"
-  ></div>
-
-  <!-- CONTENIDO -->
-<div
-  class="relative z-10
-         flex flex-col items-center justify-center
-         min-h-[calc(100vh-80px)]
-         px-4 sm:px-6 text-center
-         max-w-5xl mx-auto"
->
-
-    <!-- TÍTULO -->
-    <h1
-      class="
-        text-2xl font-semibold leading-snug
-        sm:text-3xl
-        md:text-4xl
-        lg:text-6xl lg:font-extrabold lg:leading-tight
-      "
-    >
-      <span
-        class="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl
-               font-therapy font-extrabold
-               leading-[1.1] md:leading-tight
-               text-violet-100 drop-shadow-xl"
-      >
-        Volvé a sentir
-        <span class="relative inline-block text-violet-200">
-          control
-          <span
-            class="absolute left-0 -bottom-1 h-[6px] w-full
-                   bg-violet-300/60 rounded-full
-                   animate-underline delay-1200"
-          ></span>
-        </span>
-        sobre tu
-        <span class="text-violet-200">bienestar emocional</span>
-      </span>
-    </h1>
-
-    <!-- SUBTÍTULO -->
-    <p
-      class="hidden sm:block mt-4 sm:mt-6
-             text-violet-100/80
-             text-sm sm:text-base md:text-lg
-             max-w-xl mx-auto
-             animate-fade-in-up delay-500"
-    >
-      Terapia psicológica online y presencial para ayudarte a sentirte mejor desde hoy.
-    </p>
-
-    <!-- BADGE CONFIANZA -->
+  <!-- Contenido -->
     <div
-      class="mt-6 flex items-center justify-center gap-2
-             text-violet-200/90 text-xs
-             animate-fade-in-up delay-700"
-    >
-      <svg class="w-4 h-4 text-violet-300" fill="currentColor" viewBox="0 0 20 20">
-        <path
-          fill-rule="evenodd"
-          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-          clip-rule="evenodd"
-        />
-      </svg>
-      <span>Sesiones 100% confidenciales · Espacio seguro</span>
-    </div>
+    class="absolute
+           top-1/2 left-25
+           -translate-y-1/2
+           z-20
+           max-w-xl
+           w-full
+           px-10"
+  >
+    <div class="flex flex-col items-start text-left gap-8">
 
-    <!-- CTA -->
-    <div class="mt-2 animate-fade-in-up delay-900">
-      <a
-        routerLink="/"
-        fragment="contacto"
-        aria-label="Agendá una consulta"
-        class="button-home group relative overflow-hidden
-               bg-gradient-to-r from-violet-500 to-purple-600
-               hover:from-violet-600 hover:to-purple-700
-               transition-all duration-300
-               md:hover:scale-105
-               shadow-lg shadow-violet-500/30 hover:shadow-xl"
-      >
-        <span class="relative z-10">Agendá tu primera sesión</span>
+    <!-- Columna izquierda -->
+    <div class="max-w-xl flex flex-col gap-8">
 
-        <div
-          class="absolute inset-0 bg-white/20
-                 transform -skew-x-12 -translate-x-full
-                 group-hover:translate-x-full
-                 transition-transform duration-700"
-        ></div>
-
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="w-5 h-5 relative z-10
-                 transition-transform duration-300
-                 group-hover:translate-x-1"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.5"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+      <!-- Título -->
+        <h1
+          class="font-serif
+                text-5xl sm:text-6xl lg:text-7xl
+                leading-tight
+                text-left"
         >
-          <path d="m18 8l4 4m0 0l-4 4m4-4H2" />
-        </svg>
-      </a>
+          <span class="block font-semibold text-slate-800">
+            Acompañamiento psicológico
+          </span>
+
+          <span class="relative inline-block font-medium text-slate-600 text-4xl sm:text-5xl lg:text-6xl">
+            para sentirte mejor
+
+            <!-- Pincelada SVG -->
+            <svg
+              class="absolute left-0 -bottom-3 w-full -z-10"
+              viewBox="0 0 400 30"
+              preserveAspectRatio="none"
+            >
+              <path
+                d="M5 20 Q 80 5 150 15 T 290 15
+                  Q 300 28 150 24 T 5 20 Z"
+                fill="#C4B5FD"
+                opacity="0.6"
+              />
+            </svg>
+          </span>
+        </h1>
+
+        <!-- Subtexto -->
+       <p
+        class="text-slate-600
+              text-sm sm:text-lg
+              lg:text-xl
+              leading-relaxed
+              font-light
+              max-w-lg
+              text-left"
+      >
+        Un espacio seguro para escucharte y acompañarte,
+        trabajando juntos en tu bienestar emocional
+        con respeto por tus tiempos y tu proceso.
+      </p>
+
+
+        <!-- Botón  CTA-->
+      <div class="animate-fade-in-up delay-900 ml-3">
+        <a
+          routerLink="/"
+          fragment="contacto"
+          aria-label="Agendá una consulta"
+          class="button-home group relative overflow-hidden
+                rounded-full bg-gradient-to-r from-violet-500 to-purple-600
+                hover:from-violet-600 hover:to-purple-700
+                transition-all duration-300
+                md:hover:scale-105
+                shadow-lg shadow-violet-500/30 hover:shadow-xl"
+        >
+          <span class="relative z-10">Agendá tu primera sesión</span>
+
+          <div
+            class="absolute inset-0 bg-white/20
+                  transform -skew-x-12 -translate-x-full
+                  group-hover:translate-x-full
+                  transition-transform duration-700"
+          ></div>
+
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-5 h-5 relative z-10
+                  transition-transform duration-300
+                  group-hover:translate-x-1"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m18 8l4 4m0 0l-4 4m4-4H2" />
+          </svg>
+        </a>
+      </div>
+
+      </div>
+
+
     </div>
 
   </div>
+
 </section>

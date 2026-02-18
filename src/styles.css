@@ -47,9 +47,7 @@ section {
     .section {
     @apply
       w-full
-      py-8      /* mobile */
-      md:py-10     /* tablet */
-      lg:py-10;    /* desktop */
+     /* desktop */
   }
 
   .section-hero {
@@ -57,7 +55,11 @@ section {
   }
 
 .section-container {
-  @apply max-w-[1366px] mx-auto px-4 md:px-6 lg:px-8;
+  @apply
+  max-w-7xl
+  mx-auto px-4
+  sm:px-6
+  lg:py-30
 }
 
 
@@ -69,33 +71,51 @@ section {
     @apply bg-gradient-to-br from-[#6f63ff] to-[#9b8cff] text-white;
   }
 
-.section-header {
+/* .section-header {
   @apply text-center mb-8 sm:mb-10 md:mb-12;
+} */
+
+/* .section-title {
+  @apply font-serif text-5xl md:text-6xl font-bold text-slate-900;
+} */
+
+.section-header {
+  @apply flex
+         items-center
+         justify-center
+         gap-6
+         mb-6
+         text-indigo-400;
 }
 
 .section-title {
-  font-family: 'Sora', system-ui, sans-serif;
+  @apply font-serif
+         font-bold
+         text-7xl
+         text-indigo-900
+         tracking-wide;
+}
+
+.section-arrow {
+  @apply w-55
+         h-15;
+}
+
+.section-title-subtittle {
   @apply
-    text-2xl
-    sm:text-3xl
-    md:text-5xl
-    lg:text-6xl
-    font-bold
-    tracking-tight
-    text-gray-900
-    drop-shadow-sm;
+    font-serif
+    text-xl md:text-2xl font-medium text-slate-600 mt-4
 }
 
 .section-subtitle {
-  font-family: 'Sora', system-ui, sans-serif;
   @apply
     mt-2
     sm:mt-3
-    text-xs
-    sm:text-lg
-    md:text-xl
+    text-lg
+    sm:text-xl
+    leading-relaxed
     font-semibold
-    text-violet-500;
+    text-slate-600;
 }
 
 .button-home {
@@ -105,7 +125,6 @@ section {
     gap-2
     px-6
     py-3
-    mt-10
     rounded-xl
     bg-violet-500
     text-white
@@ -127,7 +146,6 @@ section {
     md:py-4
     md:text-lg
     md:gap-3
-    md:mt-12
     md:-translate-x-3;
 }
 
@@ -164,40 +182,42 @@ section {
 
 
 .box-profile-text {
-  font-family: 'Inter', system-ui, sans-serif;
-
  @apply
+    font-serif
     w-full
     text-center
     text-gray-600
     text-sm
     leading-relaxed
-
-    md:text-xl;
+    md:text-lg
+    lg:text-xl;
 }
 
 .mini-box {
-  font-family: 'Inter', system-ui, sans-serif;
-
   @apply
-    bg-white
-    rounded-2xl
+    relative
+    rounded-3xl
     p-6
     md:p-7
     lg:p-8
     text-center
-    border-2
-    border-violet-200
     min-h-[180px]
     flex
     flex-col
     justify-center
+    gap-2
+    overflow-hidden
     transition-all
     duration-300
     ease-out
     hover:-translate-y-1
     hover:shadow-xl;
 }
+.mini-box.violet { @apply bg-violet-100; }
+.mini-box.blue   { @apply bg-sky-100; }
+.mini-box.green  { @apply bg-emerald-100; }
+
+
 
   .mini-box-title {
     @apply
@@ -220,6 +240,81 @@ section {
   .icon-primary {
     @apply w-12 h-12 stroke-violet-600;
  }
+
+
+
+.therapy-card {
+  @apply rounded-[28px]
+         bg-white/2
+         backdrop-blur-lg
+         border
+         border-white/30
+         shadow-[0_40px_90px_rgba(120,110,200,0.35),_0_10px_30px_rgba(255,255,255,0.25)]
+         px-6
+         pt-6
+         pb-15
+         text-center
+         transition-all
+         duration-300;
+}
+
+.therapy-card:hover {
+  @apply -translate-y-2
+         shadow-[0_60px_120px_rgba(120,110,200,0.45),_0_15px_40px_rgba(255,255,255,0.35)];
+}
+
+.therapy-title {
+  @apply font-serif
+        font-medium
+         text-5xl
+         text-indigo-900
+         my-4;
+}
+
+.therapy-image {
+  @apply w-full
+         aspect-[16/8]
+         object-cover
+
+        rounded-lg
+         my-6;
+}
+
+
+.therapy-list {
+  @apply
+         text-indigo-700
+         ml-2
+         text-2xl;
+}
+
+.therapy-list li {
+  @apply
+        flex
+        items-start;
+}
+
+.check-item {
+  @apply flex
+          justify-start
+          items-center
+         w-full
+         gap-3
+         leading-snug
+         mt-4;
+}
+
+.check-text {
+  @apply
+  text-gray-600;
+}
+
+.check-icon {
+  @apply text-black
+         mt-[10px]
+         flex-shrink-0;
+}
+
 
   /* .nav-link {
     @apply

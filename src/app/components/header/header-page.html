@@ -1,62 +1,70 @@
-<header
-  class="navbar fixed top-0 left-0 w-full z-50 h-20 lg:h-20
-         bg-base-100/90 backdrop-blur-md shadow-sm px-6"
->
+<header class="fixed top-4 left-0 w-full z-50 flex justify-center px-4">
 
-  <!-- LOGO -->
-  <div class="navbar-start flex items-center">
-    <img
-      src="/images/logo.png"
-      alt="Logo"
-      class="w-28 h-auto object-contain lg:w-32"
-    />
-  </div>
+  <div
+    class="w-full max-w-8xl
+           h-20
+           flex items-center justify-between
+           px-2
+           rounded-2xl
+           bg-white/60 backdrop-blur-xl
+           border border-white/40
+           shadow-lg shadow-violet-500/10"
+  >
 
-  <!-- ESPACIO -->
-  <div class="flex-1"></div>
+    <!-- LOGO -->
+    <div class="navbar-start flex items-center">
+      <img
+        src="/images/logo.png"
+        alt="Logo"
+        class="w-28 h-auto object-contain lg:w-34"
+      />
+    </div>
 
-  <!-- MENÚ DESKTOP -->
-  <div class="navbar-end hidden lg:flex">
-    <navbar-page></navbar-page>
-  </div>
+    <!-- Links Desktop -->
+    <nav class="hidden lg:flex items-center gap-10
+            text-lg
+            font-medium
+            text-slate-600
+            px-4">
 
-  <!-- BOTÓN HAMBURGUESA (MOBILE) -->
-  <div class="navbar-end lg:hidden">
+
+      <a routerLink="/" class="hover:text-violet-600 transition">
+        Inicio
+      </a>
+
+      <a routerLink="/servicios" class="hover:text-violet-600 transition">
+        Servicios
+      </a>
+
+      <a routerLink="/sobre-mi" class="hover:text-violet-600 transition">
+        Sobre mí
+      </a>
+
+      <a routerLink="/contacto" class="hover:text-violet-600 transition">
+        Contacto
+      </a>
+
+
+
+    </nav>
+
+    <!-- Mobile Button -->
     <button
-      class="btn btn-ghost"
+      class="lg:hidden text-slate-700"
       (click)="toggleMenu()"
-      aria-label="Abrir menú"
     >
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"
-           fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round"
-              stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+      <svg xmlns="http://www.w3.org/2000/svg"
+           class="h-6 w-6"
+           fill="none"
+           viewBox="0 0 24 24"
+           stroke="currentColor">
+        <path stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"/>
       </svg>
     </button>
+
   </div>
 
 </header>
-
-@if (isMenuOpen()) {
-  <div
-  class="lg:hidden fixed top-18 left-0 w-full z-40
-         flex justify-center items-center"
->
-  <div
-    class="
-    flex justify-center
-      w-full
-      max-w-[360px]
-      bg-base-100
-      shadow-xl
-      rounded-[32px]
-      animate-slide-down
-    "
-  >
-    <navbar-page (linkClick)="closeMenu()"></navbar-page>
-  </div>
-</div>
-}
-
-
-

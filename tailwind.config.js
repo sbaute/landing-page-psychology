@@ -5,6 +5,11 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+      serif: ['"DM Serif Display"', 'serif'],
+      sans: ['Inter', 'sans-serif'],
+      },
+
       animation: {
         fadeIn: 'fadeIn 0.4s ease-out',
         'fade-in-up': 'fadeInUp 0.6s ease-out',
