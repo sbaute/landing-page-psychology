@@ -1,5 +1,5 @@
 import { Component, input } from '@angular/core';
-import { CheckItem } from "../CheckItem/checkItem";
+import { CheckItem } from "../checkItem/checkItem";
 
 @Component({
   selector: 'card-information-service',
