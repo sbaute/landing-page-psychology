@@ -1,86 +1,145 @@
 <header class="fixed top-4 left-0 w-full z-50 flex justify-center px-4">
+  <div class="relative w-full max-w-8xl">
+    <div
+      class="w-full h-20
+             flex items-center justify-between
+             px-4 sm:px-6
+             rounded-2xl
+             bg-white/60 backdrop-blur-xl
+             border border-white/40
+             shadow-lg shadow-violet-500/10"
+    >
+      <!-- LOGO -->
+      <div class="flex items-center gap-3">
+        <img
+          src="/images/logo.png"
+          alt="Logo"
+          class="w-28 h-auto object-contain"
+        />
+      </div>
 
-  <div
-    class="w-full max-w-8xl
-           h-20
-           flex items-center justify-between
-           px-2
-           rounded-2xl
-           bg-white/60 backdrop-blur-xl
-           border border-white/40
-           shadow-lg shadow-violet-500/10"
-  >
+      <!-- NAV Desktop -->
+      <nav class="hidden lg:flex items-center gap-10 text-lg font-medium text-slate-600 px-4">
+        <button
+          type="button"
+          (click)="goTo('inicio')"
+          class="transition hover:text-violet-600"
+          [class.text-violet-600]="activeSection() === 'inicio'"
+        >
+          Inicio
+        </button>
 
-    <!-- LOGO -->
-    <div class="navbar-start flex items-center">
-      <img
-        src="/images/logo.png"
-        alt="Logo"
-        class="w-28 h-auto object-contain lg:w-34"
-      />
+        <button
+          type="button"
+          (click)="goTo('servicios')"
+          class="transition hover:text-violet-600"
+          [class.text-violet-600]="activeSection() === 'servicios'"
+        >
+          Servicios
+        </button>
+
+        <button
+          type="button"
+          (click)="goTo('sobre-mi')"
+          class="transition hover:text-violet-600"
+          [class.text-violet-600]="activeSection() === 'sobre-mi'"
+        >
+          Sobre mí
+        </button>
+
+        <button
+          type="button"
+          (click)="goTo('contacto')"
+          class="transition hover:text-violet-600"
+          [class.text-violet-600]="activeSection() === 'contacto'"
+        >
+          Contacto
+        </button>
+      </nav>
+
+      <!-- Mobile Button -->
+      <button
+        type="button"
+        class="lg:hidden inline-flex items-center justify-center
+               w-11 h-11 rounded-xl
+               text-slate-700 hover:bg-white/40 transition"
+        (click)="toggleMenu()"
+        aria-label="Abrir menú"
+        [attr.aria-expanded]="menuOpen()"
+      >
+        @if (!menuOpen()) {
+          <!-- Hamburguesa -->
+          <svg xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        } @else {
+          <!-- X -->
+          <svg xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        }
+      </button>
     </div>
 
-  <!-- NAV -->
-  <nav
-    class="hidden lg:flex items-center gap-10 text-lg font-medium text-slate-600 px-4"
-  >
-    <button
-      type="button"
-      (click)="goTo('inicio')"
-      class="transition hover:text-violet-600"
-      [class.text-violet-600]="activeSection() === 'inicio'"
-    >
-      Inicio
-    </button>
+    <!-- Mobile Dropdown -->
+    @if (menuOpen()) {
+      <div class="lg:hidden absolute top-[5.5rem] left-0 w-full">
+        <div
+          class="rounded-2xl
+                 bg-white/70 backdrop-blur-xl
+                 border border-white/40
+                 shadow-xl shadow-violet-500/10
+                 p-3"
+        >
+          <button
+            type="button"
+            (click)="goToMobile('inicio')"
+            class="w-full text-left px-4 py-3 rounded-xl
+                   text-slate-700 font-medium
+                   hover:bg-white/50 transition"
+            [class.text-violet-600]="activeSection() === 'inicio'"
+          >
+            Inicio
+          </button>
 
-    <button
-      type="button"
-      (click)="goTo('servicios')"
-      class="transition hover:text-violet-600"
-      [class.text-violet-600]="activeSection() === 'servicios'"
-    >
-      Servicios
-    </button>
+          <button
+            type="button"
+            (click)="goToMobile('servicios')"
+            class="w-full text-left px-4 py-3 rounded-xl
+                   text-slate-700 font-medium
+                   hover:bg-white/50 transition"
+            [class.text-violet-600]="activeSection() === 'servicios'"
+          >
+            Servicios
+          </button>
 
-    <button
-      type="button"
-      (click)="goTo('sobre-mi')"
-      class="transition hover:text-violet-600"
-      [class.text-violet-600]="activeSection() === 'sobre-mi'"
-    >
-      Sobre mí
-    </button>
+          <button
+            type="button"
+            (click)="goToMobile('sobre-mi')"
+            class="w-full text-left px-4 py-3 rounded-xl
+                   text-slate-700 font-medium
+                   hover:bg-white/50 transition"
+            [class.text-violet-600]="activeSection() === 'sobre-mi'"
+          >
+            Sobre mí
+          </button>
 
-    <button
-      type="button"
-      (click)="goTo('contacto')"
-      class="transition hover:text-violet-600"
-      [class.text-violet-600]="activeSection() === 'contacto'"
-    >
-      Contacto
-    </button>
-  </nav>
-
-
-
-
-    <!-- Mobile Button -->
-    <button
-      class="lg:hidden text-slate-700"
-      (click)="toggleMenu()"
-    >
-      <svg xmlns="http://www.w3.org/2000/svg"
-           class="h-6 w-6"
-           fill="none"
-           viewBox="0 0 24 24"
-           stroke="currentColor">
-        <path stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"/>
-      </svg>
-    </button>
-
+          <button
+            type="button"
+            (click)="goToMobile('contacto')"
+            class="w-full text-left px-4 py-3 rounded-xl
+                   text-slate-700 font-medium
+                   hover:bg-white/50 transition"
+            [class.text-violet-600]="activeSection() === 'contacto'"
+          >
+            Contacto
+          </button>
+        </div>
+      </div>
+    }
   </div>
-
 </header>

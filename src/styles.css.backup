@@ -1,0 +1,397 @@
+@import "tailwindcss";
+
+@plugin "daisyui" {
+  themes: cupcake;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  scroll-margin-top: 90px;
+}
+
+@keyframes gradientMoveStrong {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+.animate-gradient-strong {
+  animation: gradientMoveStrong 10s ease-in-out infinite;
+}
+
+@layer base {
+  .font-dancing {
+    font-family: 'Dancing Script', cursive;
+  }
+
+  .font-inter {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  .font-sora {
+    font-family: 'Sora', system-ui, sans-serif;
+  }
+}
+
+/* estilos para las section and container */
+@layer components {
+    .section {
+    @apply
+      w-full
+     /* desktop */
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}  animation: slideDownSoft 260ms ease-out;.animate-slide-down {}  }    transform: translateY(0) scale(1);    opacity: 1;  to {  }    transform: translateY(-20px) scale(0.98);    opacity: 0;  from {@keyframes slideDownSoft {/* Menu Hamburguesa animacion */}}  color: #6E63B6;.nav-link:hover {}    active:text-white;    active:bg-[#6E63B6]    focus:text-white    focus:bg-[#6E63B6]/70    focus:outline-none    hover:text-white    hover:bg-[#6E63B6]/70    duration-200    transition-colors    text-gray-700    font-medium    md:text-lg    sm:text-base    text-sm    rounded-full    py-2.5    px-5  @apply.nav-link {  } */      active:text-white;      active:bg-violet-700      focus:text-white      focus:bg-violet-600      hover:text-white      hover:bg-violet-600      duration-200      transition-colors      text-violet-600      border-violet-500      border-2    @apply  .nav-link-bordered {  }      active:text-white;      active:bg-[#6E63B6]      focus:text-white      focus:bg-[#6E63B6]/70      focus:outline-none      hover:text-white      hover:bg-[#6E63B6]/70      duration-200      transition-colors      text-gray-700      font-medium      md:text-lg      text-base      rounded-full      py-2.5      px-5    @apply  /* .nav-link {}         flex-shrink-0;         mt-[10px]  @apply text-black.check-icon {}  text-gray-600;  @apply.check-text {}         mt-4;         leading-snug         gap-3         w-full          items-center          justify-start  @apply flex.check-item {}        items-start;        flex  @apply.therapy-list li {}         text-2xl;         ml-2         text-indigo-700  @apply.therapy-list {}         my-6;        rounded-lg         object-cover         aspect-[16/8]  @apply w-full.therapy-image {}         my-4;         text-indigo-900         text-5xl        font-medium  @apply font-serif.therapy-title {}         shadow-[0_60px_120px_rgba(120,110,200,0.45),_0_15px_40px_rgba(255,255,255,0.35)];  @apply -translate-y-2.therapy-card:hover {}         duration-300;         transition-all         text-center         pb-15         pt-6         px-6         shadow-[0_40px_90px_rgba(120,110,200,0.35),_0_10px_30px_rgba(255,255,255,0.25)]         border-white/30         border         backdrop-blur-lg         bg-white/2  @apply rounded-[28px].therapy-card { }    @apply w-12 h-12 stroke-violet-600;  .icon-primary {  }      leading-relaxed;      text-gray-600      md:text-sm      text-xs      mt-2    @apply
+n  .mini-box-text {  }      text-gray-900;      font-semibold      md:text-lg      text-sm      mt-4    @apply  .mini-box-title {.mini-box.green  { @apply bg-emerald-100; }.mini-box.blue   { @apply bg-sky-100; }.mini-box.violet { @apply bg-violet-100; }}    hover:shadow-xl;    hover:-translate-y-1    ease-out    duration-300    transition-all    overflow-hidden    gap-2    justify-center    flex-col    flex    min-h-[180px]    text-center    lg:p-8    md:p-7    p-6    rounded-3xl    relative  @apply.mini-box {}    lg:text-xl;    md:text-lg    leading-relaxed    text-sm    text-gray-600    text-center    w-full    font-serif @apply.box-profile-text {}    md:-translate-x-3;    focus-visible:ring-white/50    focus-visible:ring-2    focus-visible:outline-none    active:scale-95    hover:-translate-y-1    hover:shadow-2xl    hover:bg-violet-600    ease-out    duration-300    transition-all    gap-3    items-center    shadow-lg    md:text-lg    text-base    font-semibold    text-white    bg-violet-500    rounded-full    md:py-4    py-3    md:px-20    px-12    mt-12    inline-flex  @apply.button-service {}    md:-translate-x-3;    md:gap-3    md:text-lg    md:py-4    md:px-8    focus-visible:ring-white/50    focus-visible:ring-2    focus-visible:outline-none    active:scale-95    hover:-translate-y-1    hover:shadow-2xl    hover:bg-violet-600    ease-out    duration-300    transition-all    shadow-lg    text-xs    font-semibold    text-white    bg-violet-500    rounded-xl    py-3    px-6    gap-2    items-center    inline-flex  @apply.button-home {}    text-slate-600;    font-semibold    leading-relaxed    sm:text-xl    text-lg    sm:mt-3    mt-2  @apply.section-subtitle {}    text-xl md:text-2xl font-medium text-slate-600 mt-4    font-serif  @apply.section-title-subtittle {}         h-15;  @apply w-55.section-arrow {}         tracking-wide;         text-indigo-900         text-7xl         font-bold  @apply font-serif.section-title {}         text-indigo-400;         mb-6         gap-6         justify-center         items-center  @apply flex.section-header {} */  @apply font-serif text-5xl md:text-6xl font-bold text-slate-900;/* .section-title {} */  @apply text-center mb-8 sm:mb-10 md:mb-12;/* .section-header {  }    @apply bg-gradient-to-br from-[#6f63ff] to-[#9b8cff] text-white;  .section-primary {  }    @apply bg-white;  .section-neutral {}  lg:py-30  sm:px-6  mx-auto px-4  max-w-7xl  @apply
+n.section-container {  }    @apply py-40;n  .section-hero {

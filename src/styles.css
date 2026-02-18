@@ -51,15 +51,15 @@ section {
   }
 
   .section-hero {
-    @apply py-36;
+    @apply py-32;
   }
 
 .section-container {
   @apply
   max-w-7xl
-  mx-auto px-4
+  mx-auto px-4 py-15
   sm:px-6
-  lg:py-30
+  lg:py-20
 }
 
 
@@ -89,11 +89,20 @@ section {
 }
 
 .section-title {
-  @apply font-serif
-         font-bold
-         text-7xl
-         text-indigo-900
-         tracking-wide;
+  @apply
+    font-serif
+    font-bold
+    text-5xl
+    text-indigo-900
+    tracking-wide
+    whitespace-nowrap;
+}
+
+
+@media (min-width: 1024px) {
+  .section-title {
+    @apply text-7xl;
+  }
 }
 
 .section-arrow {
@@ -101,11 +110,6 @@ section {
          h-15;
 }
 
-.section-title-subtittle {
-  @apply
-    font-serif
-    text-xl md:text-2xl font-medium text-slate-600 mt-4
-}
 
 .section-subtitle {
   @apply
@@ -251,8 +255,10 @@ section {
          border-white/30
          shadow-[0_40px_90px_rgba(120,110,200,0.35),_0_10px_30px_rgba(255,255,255,0.25)]
          px-6
-         pt-6
-         pb-15
+         pt-4
+         sm:pb-6
+         pb-8
+         sm:pb-15
          text-center
          transition-all
          duration-300;
@@ -264,12 +270,15 @@ section {
 }
 
 .therapy-title {
-  @apply font-serif
-        font-medium
-         text-5xl
-         text-indigo-900
-         my-4;
+  @apply
+  font-serif
+  font-medium
+  text-3xl
+  md:text-5xl
+  text-indigo-900
+  my-4;
 }
+
 
 .therapy-image {
   @apply w-full
@@ -296,8 +305,8 @@ section {
 
 .check-item {
   @apply flex
-          justify-start
-          items-center
+        justify-start
+         items-center
          w-full
          gap-3
          leading-snug
@@ -306,13 +315,18 @@ section {
 
 .check-text {
   @apply
-  text-gray-600;
+    text-sm        /* Mobile (más chico) */
+    md:text-lg   /* Desktop (más grande) */
+    lg:text-xl     /* Pantallas grandes */
+    text-gray-600;
 }
 
 .check-icon {
-  @apply text-black
-         mt-[10px]
-         flex-shrink-0;
+  @apply
+    text-black
+    mt-[2px]        /* Mobile */
+    md:mt-[5px]     /* Desktop */
+    flex-shrink-0;
 }
 
 
