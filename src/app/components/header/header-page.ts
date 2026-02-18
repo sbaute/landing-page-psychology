@@ -1,4 +1,5 @@
-import { Component, AfterViewInit, OnDestroy, signal, input } from '@angular/core';
+import { Component, signal, inject } from '@angular/core';
+import { ScrollSpy } from '../../services/scroll-spy';
 
 @Component({
   selector: 'header-page',
@@ -9,6 +10,8 @@ export class HeaderPage {
 
  isMenuOpen = signal(false);
 
+  private scrollSpy = inject(ScrollSpy);
+  activeSection = this.scrollSpy.activeSection;
   toggleMenu() {
     this.isMenuOpen.update(v => !v);
   }
@@ -17,11 +20,21 @@ export class HeaderPage {
     this.isMenuOpen.set(false);
   }
 
-  activeSection = input<string>('inicio');
-  onScrollTo = input<(id: string) => void>(() => {});
+  // scroll spy keeps track of the current section in view
+
+  onScrollTo = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+  };
 
   goTo(id: string) {
-    this.onScrollTo()(id);
+    // update the active section signal for styling
+    this.activeSection.set(id);
+
+    // scroll smoothly to the target element if it exists
+    this.onScrollTo(id);
+
+    // close the mobile menu if it was open
+    this.closeMenu();
   }
 
 

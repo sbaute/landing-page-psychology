@@ -21,46 +21,46 @@
     </div>
 
   <!-- NAV -->
-    <nav
-      class="hidden lg:flex items-center gap-10
-            text-lg font-medium text-slate-600 px-4"
+  <nav
+    class="hidden lg:flex items-center gap-10 text-lg font-medium text-slate-600 px-4"
+  >
+    <button
+      type="button"
+      (click)="goTo('inicio')"
+      class="transition hover:text-violet-600"
+      [class.text-violet-600]="activeSection() === 'inicio'"
     >
-      <button
-        type="button"
-        (click)="goTo('inicio')"
-        class="transition hover:text-violet-600"
-        [class.text-violet-600]="activeSection() === 'inicio'"
-      >
-        Inicio
-      </button>
+      Inicio
+    </button>
 
-      <button
-        type="button"
-        (click)="goTo('servicios')"
-        class="transition hover:text-violet-600"
-        [class.text-violet-600]="activeSection() === 'servicios'"
-      >
-        Servicios
-      </button>
+    <button
+      type="button"
+      (click)="goTo('servicios')"
+      class="transition hover:text-violet-600"
+      [class.text-violet-600]="activeSection() === 'servicios'"
+    >
+      Servicios
+    </button>
 
-      <button
-        type="button"
-        (click)="goTo('sobre-mi')"
-        class="transition hover:text-violet-600"
-        [class.text-violet-600]="activeSection() === 'sobre-mi'"
-      >
-        Sobre mí
-      </button>
+    <button
+      type="button"
+      (click)="goTo('sobre-mi')"
+      class="transition hover:text-violet-600"
+      [class.text-violet-600]="activeSection() === 'sobre-mi'"
+    >
+      Sobre mí
+    </button>
 
-      <button
-        type="button"
-        (click)="goTo('contacto')"
-        class="transition hover:text-violet-600"
-        [class.text-violet-600]="activeSection() === 'contacto'"
-      >
-        Contacto
-      </button>
-    </nav>
+    <button
+      type="button"
+      (click)="goTo('contacto')"
+      class="transition hover:text-violet-600"
+      [class.text-violet-600]="activeSection() === 'contacto'"
+    >
+      Contacto
+    </button>
+  </nav>
+
 
 
 

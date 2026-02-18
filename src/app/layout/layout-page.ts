@@ -60,7 +60,7 @@ export class LayoutPage implements AfterViewInit, OnDestroy {
         }
       },
       {
-        threshold: 0.35, // 55% visible = activa
+        threshold: 0.30, // 55% visible = activa
       }
     );
 
