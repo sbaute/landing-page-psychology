@@ -1,14 +1,12 @@
-import { Component, AfterViewInit, OnDestroy, signal } from '@angular/core';
-import { RouterLinkActive, RouterLink } from "@angular/router";
-import { NavbarPage } from "../navbar-page/navbar-page";
+import { Component, AfterViewInit, OnDestroy, signal, input } from '@angular/core';
 
 @Component({
   selector: 'header-page',
-  imports: [NavbarPage],
+  imports: [],
   templateUrl: './header-page.html',
 })
 export class HeaderPage {
-  
+
  isMenuOpen = signal(false);
 
   toggleMenu() {
@@ -18,5 +16,13 @@ export class HeaderPage {
   closeMenu() {
     this.isMenuOpen.set(false);
   }
+
+  activeSection = input<string>('inicio');
+  onScrollTo = input<(id: string) => void>(() => {});
+
+  goTo(id: string) {
+    this.onScrollTo()(id);
+  }
+
 
 }

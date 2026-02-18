@@ -1,3 +1,6 @@
+<div class="fixed bottom-4 right-4 z-[9999] bg-black/70 text-white px-4 py-2 rounded-xl">
+  Active: {{ activeSection() }}
+</div>
 <div
   class="relative min-h-screen
          bg-[url('/images/sky-bg.png')]
@@ -7,36 +10,28 @@
   <div class="absolute inset-0 bg-white/40"></div>
 
 
-     <!-- Contenido -->
-  <div class="relative z-10">
+<!-- Contenido -->
+<div class="relative z-10">
+  <!-- HERO -->
+  <section id="inicio" class="scroll-mt-28">
+    <home-section></home-section>
+  </section>
 
-    <!-- HERO -->
-    <section
-      id="inicio">
-      <home-section></home-section>
-    </section>
+  <!-- SERVICIOS -->
+  <section id="servicios" class="section section-soft scroll-mt-28">
+    <servicios-section></servicios-section>
+  </section>
 
-    <!-- SERVICIOS -->
-    <section
-      id="servicios"
-      class="section section-soft">
-      <servicios-section></servicios-section>
-    </section>
+  <!-- SOBRE MI -->
+  <section id="sobre-mi" class="section section-soft scroll-mt-28">
+    <profile-section></profile-section>
+  </section>
 
-    <!-- SOBRE MI -->
-    <section
-      id="sobre-mi"
-      class="section section-soft">
-      <profile-section></profile-section>
-    </section>
+  <!-- CONTACTO -->
+  <section id="contacto" class="section section-soft scroll-mt-28">
+    <contact-section></contact-section>
+  </section>
+</div>
 
-    <!-- CONTACTO -->
-    <section
-      id="contacto"
-      class="section section-soft">
-      <contact-section></contact-section>
-    </section>
-
-  </div>
 
 </div>

@@ -1,52 +1,84 @@
-import { AfterViewInit, Component } from '@angular/core';
-import { HeaderPage } from "../components/header/header-page";
-import { HomeSection } from "../sections/home-section/home-section";
-import { ProfileSection } from "../sections/profile-section/profile-section";
-import { ActivatedRoute } from '@angular/router';
-import { ServiciosSection } from "../sections/servicios-section/servicios-section";
-import { MyApproachSection } from '../sections/my-approach-section/my-approach-section';
-import { ContactSection } from "../sections/contact-section/contact-section";
-import { FooterPage } from '../components/footer/footer-page';
+import { AfterViewInit, Component, OnDestroy, signal } from '@angular/core';
+import { Location } from '@angular/common';
+
+import { HomeSection } from '../sections/home-section/home-section';
+import { ProfileSection } from '../sections/profile-section/profile-section';
+import { ServiciosSection } from '../sections/servicios-section/servicios-section';
+import { ContactSection } from '../sections/contact-section/contact-section';
 
 @Component({
   selector: 'layout-page',
+  standalone: true,
   imports: [HomeSection, ProfileSection, ServiciosSection, ContactSection],
   templateUrl: './layout-page.html',
 })
-export class LayoutPage implements AfterViewInit {
+export class LayoutPage implements AfterViewInit, OnDestroy {
+  activeSection = signal('inicio');
 
-  // Inyectamos ActivatedRoute para escuchar cambios en el fragment de la URL
-  constructor(private route: ActivatedRoute) {}
+  private observer?: IntersectionObserver;
+  private readonly sectionIds = ['inicio', 'servicios', 'sobre-mi', 'contacto'];
 
-  // Hook del ciclo de vida:
-  // Se ejecuta UNA VEZ cuando Angular ya terminó de renderizar
-  // este componente y todos sus componentes hijos
+  constructor(private location: Location) {}
+
   ngAfterViewInit(): void {
+    // Si entrás con /#servicios, /#contacto, etc.
+    const hash = window.location.hash.replace('#', '');
 
-    // Nos suscribimos al fragment de la URL (lo que viene después del #)
-    // Ejemplo: /#sobre-mi → fragment = 'sobre-mi'
-    this.route.fragment.subscribe((fragment: string | null) => {
-
-      // Si no hay fragment (ej: solo /), no hacemos nada
-      if (!fragment) return;
-
-      // Esperamos un ciclo más del navegador para asegurarnos
-      // de que TODO el DOM esté completamente renderizado
+    if (hash) {
       setTimeout(() => {
-
-        // Buscamos en el DOM el elemento cuyo id coincide con el fragment
-        // Ejemplo: <section id="sobre-mi">
-        const element = document.getElementById(fragment);
-
-        // Si el elemento existe, hacemos scroll hasta él
-        // behavior: 'smooth' → scroll animado
-        // block: 'start'   → alinea la sección al inicio de la pantalla
-        element?.scrollIntoView({
+        document.getElementById(hash)?.scrollIntoView({
           behavior: 'smooth',
-          block: 'start'
+          block: 'start',
         });
+      }, 50);
+    }
 
-      });
-    });
+    this.setupScrollSpy();
+  }
+
+  ngOnDestroy(): void {
+    this.observer?.disconnect();
+  }
+
+  private setupScrollSpy(): void {
+    this.observer = new IntersectionObserver(
+      (entries) => {
+        const mostVisible = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => (b.intersectionRatio ?? 0) - (a.intersectionRatio ?? 0))[0];
+
+        if (!mostVisible?.target?.id) return;
+
+        const id = mostVisible.target.id;
+
+        if (this.activeSection() !== id) {
+          this.activeSection.set(id);
+
+          // Actualiza URL sin recargar (manteniendo la ruta actual)
+          const base = window.location.pathname;
+          this.location.replaceState(`${base}#${id}`);
+        }
+      },
+      {
+        threshold: 0.35, // 55% visible = activa
+      }
+    );
+
+    for (const id of this.sectionIds) {
+      const el = document.getElementById(id);
+      if (el) this.observer.observe(el);
+    }
+  }
+
+  scrollTo(id: string): void {
+    const el = document.getElementById(id);
+    if (!el) return;
+
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+    this.activeSection.set(id);
+
+    const base = window.location.pathname;
+    this.location.replaceState(`${base}#${id}`);
   }
 }

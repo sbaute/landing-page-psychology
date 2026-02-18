@@ -20,33 +20,49 @@
       />
     </div>
 
-    <!-- Links Desktop -->
-    <nav class="hidden lg:flex items-center gap-10
-            text-lg
-            font-medium
-            text-slate-600
-            px-4">
-
-
-      <a routerLink="/" class="hover:text-violet-600 transition">
+  <!-- NAV -->
+    <nav
+      class="hidden lg:flex items-center gap-10
+            text-lg font-medium text-slate-600 px-4"
+    >
+      <button
+        type="button"
+        (click)="goTo('inicio')"
+        class="transition hover:text-violet-600"
+        [class.text-violet-600]="activeSection() === 'inicio'"
+      >
         Inicio
-      </a>
+      </button>
 
-      <a routerLink="/servicios" class="hover:text-violet-600 transition">
+      <button
+        type="button"
+        (click)="goTo('servicios')"
+        class="transition hover:text-violet-600"
+        [class.text-violet-600]="activeSection() === 'servicios'"
+      >
         Servicios
-      </a>
+      </button>
 
-      <a routerLink="/sobre-mi" class="hover:text-violet-600 transition">
+      <button
+        type="button"
+        (click)="goTo('sobre-mi')"
+        class="transition hover:text-violet-600"
+        [class.text-violet-600]="activeSection() === 'sobre-mi'"
+      >
         Sobre mí
-      </a>
+      </button>
 
-      <a routerLink="/contacto" class="hover:text-violet-600 transition">
+      <button
+        type="button"
+        (click)="goTo('contacto')"
+        class="transition hover:text-violet-600"
+        [class.text-violet-600]="activeSection() === 'contacto'"
+      >
         Contacto
-      </a>
-
-
-
+      </button>
     </nav>
+
+
 
     <!-- Mobile Button -->
     <button
