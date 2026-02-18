@@ -1,58 +1,49 @@
-<header class="fixed top-4 left-0 w-full z-50 flex justify-center px-4">
-  <div class="relative w-full max-w-8xl">
+<header class="fixed top-3 sm:top-4 left-0 w-full z-50 flex justify-center px-3 sm:px-4">
+  <div class="relative w-full max-w-7xl">
+
+    <!-- NAV CONTAINER -->
     <div
-      class="w-full h-20
+      class="w-full h-16 sm:h-20
              flex items-center justify-between
              px-4 sm:px-6
              rounded-2xl
-             bg-white/60 backdrop-blur-xl
+             bg-white/70 backdrop-blur-xl
              border border-white/40
              shadow-lg shadow-violet-500/10"
     >
+
       <!-- LOGO -->
       <div class="flex items-center gap-3">
         <img
           src="/images/logo.png"
           alt="Logo"
-          class="w-28 h-auto object-contain"
+          class="w-24 sm:w-28 h-auto object-contain"
         />
       </div>
 
       <!-- NAV Desktop -->
-      <nav class="hidden lg:flex items-center gap-10 text-lg font-medium text-slate-600 px-4">
-        <button
-          type="button"
-          (click)="goTo('inicio')"
+      <nav class="hidden lg:flex items-center gap-10 text-lg font-medium text-slate-600">
+        <button type="button" (click)="goTo('inicio')"
           class="transition hover:text-violet-600"
-          [class.text-violet-600]="activeSection() === 'inicio'"
-        >
+          [class.text-violet-600]="activeSection() === 'inicio'">
           Inicio
         </button>
 
-        <button
-          type="button"
-          (click)="goTo('servicios')"
+        <button type="button" (click)="goTo('servicios')"
           class="transition hover:text-violet-600"
-          [class.text-violet-600]="activeSection() === 'servicios'"
-        >
+          [class.text-violet-600]="activeSection() === 'servicios'">
           Servicios
         </button>
 
-        <button
-          type="button"
-          (click)="goTo('sobre-mi')"
+        <button type="button" (click)="goTo('sobre-mi')"
           class="transition hover:text-violet-600"
-          [class.text-violet-600]="activeSection() === 'sobre-mi'"
-        >
+          [class.text-violet-600]="activeSection() === 'sobre-mi'">
           Sobre mí
         </button>
 
-        <button
-          type="button"
-          (click)="goTo('contacto')"
+        <button type="button" (click)="goTo('contacto')"
           class="transition hover:text-violet-600"
-          [class.text-violet-600]="activeSection() === 'contacto'"
-        >
+          [class.text-violet-600]="activeSection() === 'contacto'">
           Contacto
         </button>
       </nav>
@@ -60,22 +51,20 @@
       <!-- Mobile Button -->
       <button
         type="button"
-        class="lg:hidden inline-flex items-center justify-center
-               w-11 h-11 rounded-xl
+        class="lg:hidden flex items-center justify-center
+               w-10 h-10 rounded-xl
                text-slate-700 hover:bg-white/40 transition"
         (click)="toggleMenu()"
         aria-label="Abrir menú"
         [attr.aria-expanded]="menuOpen()"
       >
         @if (!menuOpen()) {
-          <!-- Hamburguesa -->
           <svg xmlns="http://www.w3.org/2000/svg"
             class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
               d="M4 6h16M4 12h16M4 18h16"/>
           </svg>
         } @else {
-          <!-- X -->
           <svg xmlns="http://www.w3.org/2000/svg"
             class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -83,63 +72,53 @@
           </svg>
         }
       </button>
+
     </div>
 
     <!-- Mobile Dropdown -->
     @if (menuOpen()) {
-      <div class="lg:hidden absolute top-[5.5rem] left-0 w-full">
+      <div class="lg:hidden absolute top-full mt-3 left-0 w-full animate-fade-in">
         <div
           class="rounded-2xl
-                 bg-white/70 backdrop-blur-xl
+                 bg-white/80 backdrop-blur-xl
                  border border-white/40
                  shadow-xl shadow-violet-500/10
-                 p-3"
+                 p-3 space-y-1"
         >
-          <button
-            type="button"
+          <button type="button"
             (click)="goToMobile('inicio')"
             class="w-full text-left px-4 py-3 rounded-xl
                    text-slate-700 font-medium
-                   hover:bg-white/50 transition"
-            [class.text-violet-600]="activeSection() === 'inicio'"
-          >
+                   hover:bg-white/50 transition">
             Inicio
           </button>
 
-          <button
-            type="button"
+          <button type="button"
             (click)="goToMobile('servicios')"
             class="w-full text-left px-4 py-3 rounded-xl
                    text-slate-700 font-medium
-                   hover:bg-white/50 transition"
-            [class.text-violet-600]="activeSection() === 'servicios'"
-          >
+                   hover:bg-white/50 transition">
             Servicios
           </button>
 
-          <button
-            type="button"
+          <button type="button"
             (click)="goToMobile('sobre-mi')"
             class="w-full text-left px-4 py-3 rounded-xl
                    text-slate-700 font-medium
-                   hover:bg-white/50 transition"
-            [class.text-violet-600]="activeSection() === 'sobre-mi'"
-          >
+                   hover:bg-white/50 transition">
             Sobre mí
           </button>
 
-          <button
-            type="button"
+          <button type="button"
             (click)="goToMobile('contacto')"
             class="w-full text-left px-4 py-3 rounded-xl
                    text-slate-700 font-medium
-                   hover:bg-white/50 transition"
-            [class.text-violet-600]="activeSection() === 'contacto'"
-          >
+                   hover:bg-white/50 transition">
             Contacto
           </button>
         </div>
       </div>
     }
+
   </div>
 </header>
