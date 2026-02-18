@@ -98,7 +98,7 @@ section {
   @apply
     font-serif
     font-bold
-    text-5xl
+    text-6xl
     text-indigo-900
     tracking-wide
     whitespace-nowrap;
@@ -116,17 +116,6 @@ section {
          h-15;
 }
 
-
-.section-subtitle {
-  @apply
-    mt-2
-    sm:mt-3
-    text-lg
-    sm:text-xl
-    leading-relaxed
-    font-semibold
-    text-slate-600;
-}
 
 .button-home {
   @apply
