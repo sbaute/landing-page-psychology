@@ -17,19 +17,32 @@
   "
 >
   <div class="flex flex-col items-center gap-3 w-full">
-    <div
-      class="
-        w-11 h-11 rounded-full
-        bg-white/40
-        border border-white/25
-        flex items-center justify-center
-        shadow-sm
-        transition-all duration-300
-        group-hover:bg-white/55
-        shrink-0
-      "
-    >
-      <span class="text-xl">{{ icon() }}</span>
+   <div
+  class="
+    w-11 h-11 rounded-full
+    bg-white/40
+    border border-white/25
+    flex items-center justify-center
+    shadow-sm
+    transition-all duration-300
+    group-hover:bg-white/55
+    shrink-0
+  "
+>
+  @for (svg of svgs; track svg.name) {
+        @if (svg.name === type()) {
+          <svg xmlns="http://www.w3.org/2000/svg"
+              [attr.viewBox]="svg.viewBox"
+              width="24"
+              height="24"
+              class="text-violet-500">
+            <path fill="currentColor" [attr.d]="svg.path"></path>
+          </svg>
+        }
+      }
+      @empty {
+        <p>No SVGs available.</p>
+      }
     </div>
 
     <div class="flex flex-col items-center ">

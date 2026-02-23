@@ -127,25 +127,18 @@
         </p>
 
         <!-- MINI CARDS -->
-        <div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
-          <mini-card
-            icon="💗"
-            title="Mi Enfoque"
-            description="Integración de diversas terapias"
-          />
-
-          <mini-card
-            icon="🪷"
-            title="Espacio Terapéutico"
-            description="Confianza, empatía y respeto."
-          />
-
-          <mini-card
-            icon="🧭"
-            title="Cada Proceso es Único"
-            description="Acompañamiento a tu propio ritmo."
-          />
-        </div>
+          <div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
+            @for (card of cards; track card.type) {
+              <mini-card
+                [type]="card.type"
+                [title]="card.title"
+                [description]="card.description"
+              ></mini-card>
+            }
+            @empty {
+              <p>No hay tarjetas para mostrar.</p>
+            }
+          </div>
 
       </div>
     </div>
