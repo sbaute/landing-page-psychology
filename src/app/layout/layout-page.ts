@@ -4,14 +4,16 @@ import { ProfileSection } from '../sections/profile-section/profile-section';
 import { ServiciosSection } from '../sections/servicios-section/servicios-section';
 import { ContactSection } from '../sections/contact-section/contact-section';
 import { ScrollSpy } from '../services/scroll-spy';
+import { ButtonWsp } from "../components/button-wsp/button-wsp";
 
 @Component({
   selector: 'layout-page',
   standalone: true,
-  imports: [HomeSection, ProfileSection, ServiciosSection, ContactSection],
+  imports: [HomeSection, ProfileSection, ServiciosSection, ContactSection, ButtonWsp],
   templateUrl: './layout-page.html',
 })
 export class LayoutPage implements AfterViewInit {
+
   // expose the shared signal from the service for debug or other uses
   get activeSection() {
     return this.scrollSpy.activeSection;
