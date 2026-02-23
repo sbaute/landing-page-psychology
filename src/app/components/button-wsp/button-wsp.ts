@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class ButtonWsp {
 
 
-  phone = '5493644123456';
+  phone = '3415614807';
   message = 'Hola, estoy interesado/a en comenzar terapia. Me gustaría recibir información sobre las sesiones. Muchas gracias.';
 
   get whatsappLink(): string {
